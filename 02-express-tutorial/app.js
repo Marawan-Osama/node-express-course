@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+const logger = require('./logger');
+
 const {products} = require('./data');
+
+app.use(logger);
 
 app.get('/',(req,res)=>{
     res.status(200).send('Home Page <a href="/products">Products</a>');
